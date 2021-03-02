@@ -1,0 +1,46 @@
+#main {
+    background: black;
+    margin-top: 30px;
+}
+
+body {
+    color: white;
+}
+
+#main_img {
+    width: 150px;
+    height: 100px;
+}
+
+.week_prev_img {
+    height: 48px;
+    margin-top: 1px;
+    margin-right: 4px;
+    margin-bottom: 0px;
+    margin-left: 4px;
+    width: 48px;
+}
+
+.week_prev {
+    text-align: center;
+}
+
+.week_day {
+    font-size: 25px;
+    padding: 0;
+    margin: 0;
+}
+
+.details {
+    padding: 50px 50px;
+    float: left;
+    font-size: 20px;
+}
+
+.hide {
+    display: none;
+}
+
+#temperature {
+    margin: 0;
+}
