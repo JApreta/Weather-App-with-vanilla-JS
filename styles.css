@@ -48,3 +48,7 @@ body {
 #git {
     color: white;
 }
+
+#description {
+    text-transform: capitalize;
+}

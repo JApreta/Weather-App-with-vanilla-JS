@@ -2,10 +2,10 @@ const apiKey = "3a2f76834c807537970303e3dab30fe7";
 let city;
 let temp = document.querySelector("#temperature");
 let toCel = document.querySelector("#showTempInC");
-let toFar = document.querySelector("#showTempInF");
+let tofahrenheit = document.querySelector("#showTempInF");
 let toCel_span = document.querySelector("#showTempInC_span");
-let toFar_span = document.querySelector("#showTempInF_span");
-let currentDate = new Date();
+let tofahrenheit_span = document.querySelector("#showTempInF_span");
+
 let weekdays = [
     "Sunday",
     "Monday",
@@ -18,13 +18,15 @@ let weekdays = [
 
 function showTemperature(response) {
 
+    console.log(response.data);
     let currentTemperature = Math.round(response.data.main.temp);
     document.querySelector('#temperature').innerHTML = currentTemperature;
     document.querySelector("#displayCityName").innerHTML = response.data.name;
     // document.querySelector("#precipitacion").innerHTML = ` Precipitacion: 0%${response.data.main.humidity}`;
     document.querySelector("#humidity").innerHTML = ` Humidity: ${response.data.main.humidity}%`;
     document.querySelector("#wind").innerHTML = ` Wind: ${Math.round(response.data.wind.speed)} km/h`;
-    document.querySelector("#description").innerHTML = `${response.data.weather[0].main}`;
+    document.querySelector("#description").innerHTML = `${response.data.weather[0].description}`;
+    showCurrentTime(response.data.dt * 1000);
 }
 
 function getCityLiveData(city) {
@@ -35,12 +37,12 @@ function getCityLiveData(city) {
 }
 
 
-function celsius_to_far(temp_in_cel) {
+function celsius_to_fahrenheit(temp_in_cel) {
     return Math.round(temp_in_cel * (9 / 5) + 32);
 }
 
-function far_to_celsius(temp_in_far) {
-    return Math.round((temp_in_far - 32) * (5 / 9));
+function fahrenheit_to_celsius(temp_in_fahrenheit) {
+    return Math.round((temp_in_fahrenheit - 32) * (5 / 9));
 }
 
 
@@ -58,12 +60,14 @@ function showCurrentLocationLiveData() {
 showCurrentLocationLiveData();
 document.querySelector('#currentLocation').addEventListener('click', showCurrentLocationLiveData);
 
-document.querySelector("#date_time").innerHTML = `${
+function showCurrentTime(timestamp) {
+    let currentDate = new Date(timestamp);
+    document.querySelector("#date_time").innerHTML = `${
   weekdays[currentDate.getDay()]
 } ${currentDate.getHours()}:${
   currentDate.getMinutes() < 10 ? "0" : ""
 }${currentDate.getMinutes()}`;
-
+}
 document.querySelector("#searchCity").addEventListener("submit", function(e) {
     e.preventDefault();
     city = document.querySelector("#city").value;
@@ -72,24 +76,24 @@ document.querySelector("#searchCity").addEventListener("submit", function(e) {
 });
 
 
-toFar.addEventListener("click", function(e) {
+tofahrenheit.addEventListener("click", function(e) {
     e.preventDefault();
-    temp.innerHTML = celsius_to_far(temp.textContent);
+    temp.innerHTML = celsius_to_fahrenheit(temp.textContent);
     if (toCel.classList.contains("hide")) {
         toCel.classList.remove("hide");
         toCel_span.classList.add("hide");
     }
 
     this.classList.add("hide");
-    toFar_span.classList.remove("hide");
+    tofahrenheit_span.classList.remove("hide");
 });
 
 toCel.addEventListener("click", function(e) {
     e.preventDefault();
-    temp.innerHTML = far_to_celsius(temp.textContent);
-    if (toFar.classList.contains("hide")) {
-        toFar.classList.remove("hide");
-        toFar_span.classList.add("hide");
+    temp.innerHTML = fahrenheit_to_celsius(temp.textContent);
+    if (tofahrenheit.classList.contains("hide")) {
+        tofahrenheit.classList.remove("hide");
+        tofahrenheit_span.classList.add("hide");
     }
     this.classList.add("hide");
     toCel_span.classList.remove("hide");
