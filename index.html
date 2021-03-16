@@ -17,109 +17,116 @@
 
 <body>
     <div class="container">
-        <div class="row" id="main">
-            <div class="col-md-2"></div>
-            <div class="col-md-8">
-                <div class="row">
-                    <div class="col-md-8">
-                        <form id="searchCity" action="" class="mt-3">
-                            <div class="input-group mb-3">
-                                <input type="text" class="form-control" placeholder="Change Location" id="city" name="city" />
-                                <div class="input-group-append">
-                                    <button type="submit" class="btn btn-primary">
+        <div class="row " id="main">
+            <div class="col-md-4 mt-3 pl-3">
+                <p>Keep Smiling</p>
+            </div>
+
+            <div class="col-md-4 ">
+                <form id="searchCity" action="" class="mt-3">
+                    <div class="input-group mb-3">
+                        <input type="text" class="form-control" placeholder="Change Location" id="city" name="city" />
+                        <div class="input-group-append">
+                            <button type="submit" class="btn btn-primary">
                       <i class="fas fa-search"></i>
                     </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="col-md-4 mt-3 ">
+                <button type="button" class="btn btn-primary" id="currentLocation">Current</button>
+            </div>
+
+            <div class="col-md-12">
+                <div class="row d-flex justify-content-center">
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h3 id="displayCityName"></h3>
+                            <h4 id="description">Partly Cloud</h4>
+                        </div>
+
+                        <div class="col-6 mt-3">
+                            <div class="clearfix weather-temperature">
+                                <img id="main_img" class="img-fluid float-left" src="images/partly_cloudy.png" alt="" />
+                                <div class="float-left">
+                                    <strong id="temperature"></strong>
+                                    <span id="units"> 
+                                            <a id="showTempInC" href="" class="hide">°C</a>&nbsp;
+                                            <span id="showTempInC_span">°C</span> |&nbsp;<a href="" id="showTempInF">°F</a>&nbsp;
+                                    <span id="showTempInF_span" class="hide">°F</span>&nbsp;
+                                    </span>
                                 </div>
-                            </div>
-                        </form>
-                    </div>
-                    <div class="col-md-4 mt-3">
-                        <button type="button" class="btn btn-primary" id="currentLocation">Current</button>
-                    </div>
-                    <div class="col-md-4 mt-3">
-                        <div class="row">
-                            <div class="col-md-12">
-                                <h1 id="displayCityName">
 
-                                </h1>
-                                <h2 id="date_time"></h2>
-                                <h4 id="description">Partly Cloud</h4>
-                            </div>
-                            <div class="col-md-6">
-                                <img id="main_img" class="img-fluid" src="images/partly_cloudy.png" alt="" />
-                            </div>
-                            <div class="col-md-2">
-                                <h3>
-                                    <p id="temperature"></p>
-                                </h3>
-                            </div>
-                            <div class="col-md-4">
-                                <a id="showTempInC" href="" class="hide">°C</a>
-                                <span id="showTempInC_span">°C</span> |
-
-                                <a href="" id="showTempInF">°F</a>
-                                <span id="showTempInF_span" class="hide">°F</span>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-md-2"></div>
-                    <div class="col-md-4 details">
-                        <p id="precipitacion">
 
-                        </p>
-                        <p id="wind">wind: 14km/hr</p>
-                        <p id="humidity">Humidity: 30%</p>
+                        <div class="col-md-4 details">
+                            <p id="precipitacion">
+
+                            </p>
+                            <p id="wind">wind: 14km/hr</p>
+                            <p id="humidity">Humidity: 30%</p>
+                        </div>
                     </div>
+
+
+
                 </div>
-                <div class="row mt-3 mb-3">
-                    <div class="col-md-2 week_prev">
-                        <p class="week_day">Mon</p>
-                        <img class="img-fluid week_prev_img" src=" images/sunny.png" alt="" />
-                        <div>
-                            27°&nbsp;C <br /> 80.6°&nbsp;F
-                        </div>
-                    </div>
-                    <div class="col-md-2 week_prev">
-                        <p class="week_day">Tue</p>
-                        <img class="img-fluid week_prev_img" src=" images/sunny.png" alt="" />
-                        <div>
-                            27°&nbsp;C <br /> 80.6°&nbsp;F
-                        </div>
-                    </div>
-                    <div class="col-md-2 week_prev">
-                        <p class="week_day">Wed</p>
-                        <img class="img-fluid week_prev_img" src=" images/partly_cloudy.png" alt="" />
-                        <div>
-                            20°&nbsp;C <br /> 68°&nbsp;F
-                        </div>
-                    </div>
-                    <div class="col-md-2 week_prev">
-                        <p class="week_day">Thu</p>
-                        <img class="img-fluid week_prev_img" src=" images/partly_cloudy.png" alt="" />
-                        <div>
-                            20°&nbsp;C <br /> 86°&nbsp;F
-                        </div>
-                    </div>
-                    <div class="col-md-2 week_prev">
-                        <p class="week_day">Fri</p>
-                        <img class="img-fluid week_prev_img" src=" images/sunny.png" alt="" />
-                        <div>
-                            20°&nbsp;C <br /> 86°&nbsp;F
-                        </div>
-                    </div>
-                    <div class="col-md-2 week_prev">
-                        <p class="week_day">Sat</p>
-                        <img class="img-fluid week_prev_img" src=" images/snow_s_rain.png" alt="" />
-                        <div>
-                            5°&nbsp;C <br /> 41°&nbsp;F
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-12">
-                    <a id="git" href="https://github.com/JApreta/Weather-App-with-vanilla-JS">Checkout Git Repo</a>
+
+            </div>
+
+
+            <div class="col-sm-2 week_prev">
+                <p class="week_day">Mon</p>
+                <img class="img-fluid week_prev_img" src=" images/sunny.png" alt="" />
+                <div>
+                    27°&nbsp;C <br /> 80.6°&nbsp;F
                 </div>
             </div>
-            <div class="col-md-2"></div>
+            <div class="col-sm-2 week_prev">
+                <p class="week_day">Tue</p>
+                <img class="img-fluid week_prev_img" src=" images/sunny.png" alt="" />
+                <div>
+                    27°&nbsp;C <br /> 80.6°&nbsp;F
+                </div>
+            </div>
+            <div class="col-sm-2 week_prev">
+                <p class="week_day">Wed</p>
+                <img class="img-fluid week_prev_img" src=" images/partly_cloudy.png" alt="" />
+                <div>
+                    20°&nbsp;C <br /> 68°&nbsp;F
+                </div>
+            </div>
+            <div class="col-sm-2 week_prev">
+                <p class="week_day">Thu</p>
+                <img class="img-fluid week_prev_img" src=" images/partly_cloudy.png" alt="" />
+                <div>
+                    20°&nbsp;C <br /> 86°&nbsp;F
+                </div>
+            </div>
+            <div class="col-sm-2 week_prev">
+                <p class="week_day">Fri</p>
+                <img class="img-fluid week_prev_img" src=" images/sunny.png" alt="" />
+                <div>
+                    20°&nbsp;C <br /> 86°&nbsp;F
+                </div>
+            </div>
+            <div class="col-sm-2 week_prev">
+                <p class="week_day">Sat</p>
+                <img class="img-fluid week_prev_img" src=" images/snow_s_rain.png" alt="" />
+                <div>
+                    5°&nbsp;C <br /> 41°&nbsp;F
+                </div>
+            </div>
+
+
+            <div class="col-md-12">
+                <a id="git" href="https://github.com/JApreta/Weather-App-with-vanilla-JS">Checkout Git Repo</a>
+                <h2 id="date_time"></h2>
+            </div>
+
         </div>
     </div>
     <script src=" weather.js"></script>

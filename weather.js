@@ -5,7 +5,7 @@ let toCel = document.querySelector("#showTempInC");
 let tofahrenheit = document.querySelector("#showTempInF");
 let toCel_span = document.querySelector("#showTempInC_span");
 let tofahrenheit_span = document.querySelector("#showTempInF_span");
-
+let mainImage = document.querySelector("#main_img");
 let weekdays = [
     "Sunday",
     "Monday",
@@ -26,7 +26,13 @@ function showTemperature(response) {
     document.querySelector("#humidity").innerHTML = ` Humidity: ${response.data.main.humidity}%`;
     document.querySelector("#wind").innerHTML = ` Wind: ${Math.round(response.data.wind.speed)} km/h`;
     document.querySelector("#description").innerHTML = `${response.data.weather[0].description}`;
-    showCurrentTime(response.data.dt * 1000);
+    showCurrentTime((response.data.dt * 1000));
+
+    mainImage.setAttribute(
+        "src",
+        `icons/${response.data.weather[0].icon}.svg`
+    );
+    mainImage.setAttribute("alt", response.data.weather[0].description);
 }
 
 function getCityLiveData(city) {

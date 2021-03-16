@@ -1,54 +1,81 @@
-#main {
-    background: black;
-    margin-top: 30px;
-}
-
-body {
-    color: white;
-}
-
-#main_img {
-    width: 150px;
-    height: 100px;
-}
-
-.week_prev_img {
-    height: 48px;
-    margin-top: 1px;
-    margin-right: 4px;
-    margin-bottom: 0px;
-    margin-left: 4px;
-    width: 48px;
-}
-
-.week_prev {
-    text-align: center;
-}
-
-.week_day {
-    font-size: 25px;
-    padding: 0;
-    margin: 0;
-}
-
-.details {
-    padding: 50px 50px;
-    float: left;
-    font-size: 20px;
-}
-
-.hide {
-    display: none;
-}
-
-#temperature {
-    margin: 0;
-}
-
-#git {
-    color: white;
-}
-
-#description {
-    text-transform: capitalize;
-}
+    #main {
+        margin-top: 7rem;
+        background-color: black;
+        border-radius: 5px;
+    }
+    
+    body {
+        color: #ffff;
+        background-color: whitesmoke;
+    }
+    
+    #main_img {
+        width: 90px;
+        height: 90px;
+        position: relative;
+        top: -16px;
+    }
+    
+    .week_prev_img {
+        height: 48px;
+        margin-top: 1px;
+        margin-right: 4px;
+        margin-bottom: 0px;
+        margin-left: 4px;
+        width: 48px;
+    }
+    
+    .week_prev {
+        text-align: center;
+    }
+    
+    .week_day {
+        font-size: 25px;
+        padding: 0;
+        margin: 0;
+    }
+    
+    .details {
+        padding: 10px 10px;
+        margin: 10px 10px;
+        font-size: 20px;
+        top: -15px;
+        float: right;
+    }
+    
+    .hide {
+        display: none;
+    }
+    
+    #temperature {
+        font-size: 3rem;
+        line-height: 1;
+        font-weight: 400;
+        margin: 0;
+    }
+    
+    #git {
+        color: white;
+    }
+    
+    #description {
+        text-transform: capitalize;
+    }
+    
+    #units {
+        font-size: 1.5rem;
+        position: relative;
+        top: -32px;
+    }
+    
+    a:link,
+    a:visited {
+        color: #ff9900 !important;
+        text-decoration: none;
+        background-color: transparent;
+        font-weight: bold;
+    }
+    
+    .btn-primary {
+        background-color: #ff9900 !important;
+    }
