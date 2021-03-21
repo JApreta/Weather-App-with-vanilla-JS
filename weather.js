@@ -60,7 +60,7 @@ function dispalyForecast(response) {
             src="icons/${forecast.weather[0].icon}.svg"
           />
           <div class="weather-forecast-temperature">
-           ${forecast.pop*100}% <br>
+           ${Math.round(forecast.pop*100)}% <br>
             <strong>
               ${Math.round(forecast.main.temp_max)}°
             </strong>
@@ -101,6 +101,10 @@ function showCurrentLocationLiveData() {
         let url = `https://api.openweathermap.org/data/2.5/weather?lat=${currentLatitude}&lon=${currentLongitude}&appid=${apiKey}&units=metric`;
         axios.get(url).then(showTemperature).catch((error) => {
             alert("City Not Found");
+        });
+        url = `https://api.openweathermap.org/data/2.5/forecast?lat=${currentLatitude}&lon=${currentLongitude}&appid=${apiKey}&units=metric`;
+        axios.get(url).then(dispalyForecast).catch((error) => {
+
         });
     });
 }
